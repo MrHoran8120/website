@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin :0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .wrapper {
+            display :grid;
+            grid-template-columns: 20vw 60vw 20vw;
+            grid-template-rows: 10vh 80vh 10vh;
+            grid-template-areas: "banner banner banner"
+                                "nav body side"
+                                "footer footer footer";
+        }
+
+        .myHeader {
+            grid-area : banner;
+            background-color: lightgreen;
+            display : grid;
+            place-content: center;
+           
+        }
+
+        .myHeader h1 {
+            margin : 0;
+            display:grid;
+            place-content: center;
+        }
+        .myInd { 
+            grid-area : nav;
+            background-color: pink;
+            text-align: center;
+            
+        }
+        .myNews {
+            grid-area : side;
+            background-color: lightgrey;
+            padding-right : 5px;
+            padding-left: 5px;
+            
+        }
+        .myBody {
+            grid-area : body;
+            background-color: lightyellow;
+            padding-right : 5px;
+            padding-left: 5px;
+            overflow : scroll;
+
+            
+        }
+        .myBody img {
+            width : 80px;   
+            float : left;
+            transition : transform 1s;
+            
+        }
+        .myBody img:hover {
+            transform :scale(5)  translate(50px,50px);
+        }
+        .footer {
+            grid-area : footer;
+            background-color: black;
+            color: white;
+            font-size: x-small;
+            display : grid;
+            place-content: center;
+        }
+
+        @media (max-width :700px) {
+            .myBody {
+                background-color: brown;
+            }
+            .wrapper {
+                display :grid;
+                grid-template-columns: 100vw;
+                grid-template-rows: 10vh auto auto auto 10vh;
+                grid-template-areas: "banner"
+                                    "nav"
+                                    "body"
+                                    "side"
+                                    "footer";
+            }
+
+            .myInd {
+                display : flex;
+                justify-content: space-evenly;
+                padding : 10px;
+            }
+
+            .myInd p {
+                background-color: bisque;
+                width : 15%;
+                padding : 10px;
+            }
+            .myInd h2 {
+                visibility: hidden;
+            }
+         
+        }
+    </style>
+
+    <script>
+        function handleDogClick() {
+            var myHeaderStatus = document.getElementById("myBanner").innerHTML;
+
+            if (myHeaderStatus == "Animals are Cute") {
+                document.getElementById("myBanner").innerHTML = "Dogs are Cute";
+            } else {
+                document.getElementById("myBanner").innerHTML = "Animals are Cute";
+            }
+            
+        }
+    </script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- Code for banner  -->
+        <div class="myHeader">
+            <h1 id="myBanner">Animals are Cute</h1>
+        </div>
+    
+        <!-- Code for index panel -->
+        <nav class="myInd">
+            <h2>Index</h2>
+            <p onclick="handleDogClick()">Dog</p>
+            <p>Cat</p>
+            <p>option 3</p>
+            <p>option 4a</p>
+        </nav>
+    
+        <!-- Code for news panel -->
+        <div class=myNews>
+            <h2>News1</h2>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        </div>
+    
+        <!-- Code for the main body panel -->
+        <div class="myBody">
+            <h2>Body</h2>
+            <img src="cat.png" alt="my image">
+            <img src="https://raw.githubusercontent.com/MrHoran8120/BouncyText/master/cat.png?token=AN66DMGJQCLSIW6A24CX7JTBBUZKO">
+           
+
+            Llorem ipsum dolor, dsit amet consectetur adipisicing elit. Sed deserunt praesentium ad laborum ab reprehenderit perspiciatis maiores illo? Maxime maiores, debitis beatae quod vero quia repellat quos minima obcaecati illo quae repudiandae similique molestiae deleniti. Libero alias dolorem possimus distinctio perferendis quasi, molestiae consectetur quia ad cum unde, voluptate, deleniti labore itaque in. Corporis, accusamus aliquam soluta saepe molestiae qui hic possimus! Saepe delectus facilis dolores dicta cupiditate dignissimos tempore voluptatibus iste deleniti magni laborum doloribus maiores omnis natus at atque corrupti accusantium, odit adipisci totam fugit? Ut modi eius voluptatibus molestias assumenda perspiciatis et obcaecati odio asperiores hic voluptatem sapiente, sed nihil eos temporibus. Quos vero pariatur ipsam nihil. Neque nobis quae totam sint provident iusto laboriosam, aliquid, modi, accusantium quibusdam libero sed consectetur tenetur numquam dicta odio vitae vero voluptas quod labore ducimus dolore? Accusamus, dignissimos animi eius labore facilis, quis ipsa ea quos quisquam possimus rem tenetur veniam maiores numquam totam laboriosam doloribus deleniti natus. Eligendi, velit? Corporis voluptatum nisi, fugit natus dignissimos ipsa perspiciatis consectetur maiores obcaecati, sequi ab asperiores provident, repellendus odio dolore assumenda. Recusandae asperiores, veniam saepe nobis id itaque voluptatem excepturi suscipit. Ab temporibus accusantium non tenetur officiis doloremque reiciendis obcaecati? Quos, deserunt.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nam illo alias iure amet dignissimos dolor accusantium. Minus, aliquid alias. Aliquam similique repellat provident voluptatum possimus, aperiam quas reiciendis quibusdam amet animi expedita quae magnam quaerat! Quaerat molestiae facilis nihil doloremque odit temporibus, quia molestias necessitatibus atque voluptatem optio porro praesentium debitis unde voluptates corporis eaque, at iste itaque repudiandae amet dolorem, aperiam cupiditate vel! Placeat voluptatum doloribus cupiditate vel libero iste veniam. Fugit rem odit, voluptas impedit nobis vero maxime eveniet saepe magni, corporis assumenda obcaecati sint, doloremque vitae? Aperiam vel, architecto reprehenderit nihil quasi ipsum repellendus. Corrupti atque debitis eveniet sint excepturi minima nesciunt sapiente vitae voluptate quisquam. Cum adipisci maiores nam harum incidunt? Voluptates amet quas itaque debitis animi repellat ex sunt tempora quis pariatur, distinctio totam praesentium quod sit molestiae velit soluta molestias qui mollitia tenetur non minima eos? Voluptas ipsa quasi deleniti commodi ipsum doloremque porro repellendus consequatur magnam tempore, dolorum, consequuntur nam quis cumque fugiat corporis? Dignissimos esse recusandae nam impedit, similique fugiat dicta sequi doloribus illum a aliquam laboriosam provident dolore, incidunt voluptates eaque error repellendus. Error voluptatibus officia ut numquam modi ducimus. Excepturi deleniti quis praesentium commodi error incidunt beatae modi illum.
+        </div>
+    
+        <div class="footer">Copyright G.Horan 2021</div>
+    </div>
+
+
+    
+</body>
+</html>
